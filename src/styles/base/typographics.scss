@@ -1,0 +1,137 @@
+@mixin font-bold {
+  font-family: $font;
+  font-weight: 700;
+}
+
+@mixin font-medium {
+  font-family: $font;
+  font-weight: 500;
+} 
+
+@mixin font-regular {
+  font-family: $font;
+  font-weight: 400;
+}
+
+@mixin font-regular-italic {
+  font-family: $font;
+  font-weight: 400;
+  font-style: italic;
+}
+
+@mixin font-light {
+  font-family: $font;
+  font-weight: 300;
+}
+
+@mixin paragraph-styles {
+  @include font-regular;
+  color: $color-text;
+  font-size: $font-paragraph-size;
+  line-height: 21px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-bold;
+  color: $color-text;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: $font-paragraph-size;
+}
+
+p,
+ul li,
+ol li {
+  @include paragraph-styles;
+}
+
+ul li,
+ol li {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol {
+  padding-left: 30px;
+
+  > li {
+    position: relative;
+    counter-increment: list;
+    list-style-type: none;
+
+    &:before {
+      color: #FA6E70;
+      content: counter(list) ".";
+      position: absolute;
+      top: 7px;
+      left: -32px;
+      text-align: right;
+      width: 26px;
+    }
+  }
+}
+
+a {
+  @include paragraph-styles;
+  color: $color-link;
+  transition-property: color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition-timing-function: ease-in;
+    color: $color-accent;
+    text-decoration: none;
+  }
+}
+
+span {
+  @include paragraph-styles();
+  color: currentColor;
+  font-weight: inherit;
+}
+
+strong {
+  @include font-bold;
+}
+
+table {
+  thead {
+    th {
+      @include font-bold;
+      font-size: $font-title-size;
+      line-height: 1.2;
+    }
+  }
+
+  tbody {
+    td {
+      @include font-regular;
+      font-size: $font-paragraph-size;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.mat-raised-button {
+  @include font-regular;
+  padding-right: 25px !important;
+  padding-left: 25px !important;
+  font-size: 18px;
+  border-radius: 18px !important;
+
+  &.mat-secondary {
+    border: 1px solid $color-accent;
+  }
+}
+  

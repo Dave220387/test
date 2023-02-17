@@ -1,0 +1,33 @@
+@mixin reset-spaces {
+  margin: 0;
+  padding: 0;
+}
+
+[class*='hidden-'] {
+  &[class*='-xs'] {
+    @media all and (max-width: $screen-md) {
+      display: none !important;
+    }
+  } 
+
+  &[class*='-md'] {
+    @media all and (min-width: $screen-md) and (max-width: $screen-lg) {
+      display: none !important;
+    }
+  }
+
+  &[class*='-lg'] {
+    @media all and (min-width: $screen-lg) {
+      display: none !important;
+    }
+  }
+}
+
+[ellipsis] {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 8px;
+  flex: 1 1 0;
+}

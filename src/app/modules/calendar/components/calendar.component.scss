@@ -1,0 +1,80 @@
+@import "src/styles/base/variables";
+
+.p-calendar {
+  &__title {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .calendar {
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    &__header {
+      background-color: $color-accent;
+
+      th {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        color: $color-white;
+      }
+    }
+
+    &__days {
+      td {
+        height: 85px;
+        background-color: $color-white;
+        cursor: pointer;
+        line-height: 85px;
+        text-align: center;
+
+        &:not(.currentMonth) {
+          opacity: 0.5;
+          pointer-events: none;
+        }
+
+        &.hasReminders {
+          position: relative;
+
+          span {
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 2px 5px;
+            width: 100%;
+            background-color: $color-accent;
+            color: $color-white;
+            text-align: left;
+          }
+
+          .reminder-wrapper {
+            position: absolute;
+            width: calc(100% - 10px);
+            border-bottom: solid 1px #999;
+            border-right: solid 1px #999;
+            border-top: solid 1px #aaa;
+            border-radius: 8px;
+            overflow: hidden;
+
+            &:nth-child(2) {
+              top: 25px;
+              z-index: 5;
+            }
+
+            @for $i from 2 through 99 {
+              $element: $i + 1;
+              $positionBase: 25;
+              &:nth-child(#{$element}) {
+                top: #{$positionBase * $element}px;
+                z-index: 5 * $element;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+ 

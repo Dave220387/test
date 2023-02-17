@@ -1,0 +1,23 @@
+.mat-form-field-type-mat-select {
+  .mat-form-field-wrapper {
+    padding-bottom: 10px;
+  }
+
+  .mat-select {
+    padding: 10px;
+    box-sizing: border-box;
+  
+    &-panel {
+      .mat-option,
+      .mat-optgroup-label {
+        height: 40px !important;
+        line-height: 40px !important;
+      }
+  
+      .mat-option-text {
+        @include font-regular;
+      }
+    }
+  }
+}
+ 

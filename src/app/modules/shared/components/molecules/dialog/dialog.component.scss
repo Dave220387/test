@@ -1,0 +1,50 @@
+@import "src/styles/base/variables";
+@import "src/styles/base/typographics";
+@import "src/styles/base/utils";
+
+.calendar-app-dialog {
+  position: relative;
+  max-height: 500px;
+  padding: 40px;
+  box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 20%), 0px 24px 38px 3px rgb(0 0 0 / 14%), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  background-color: $color-white;
+
+  &__title {
+    margin-bottom: 20px;
+    color: $color-text;
+  }
+
+  &__content {
+    * {
+      word-break: break-word;
+    }
+  
+    .body-html {
+      @include paragraph-styles;
+      word-break: break-all;
+  
+      .file-item {
+  
+        .material-icons {
+          display: block;
+        }
+      }
+    }
+   
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+
+  &__actions {
+    margin-top: 20px;
+  
+    .button {
+      margin-right: 10px;
+  
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

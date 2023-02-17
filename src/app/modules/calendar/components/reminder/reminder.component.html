@@ -1,0 +1,10 @@
+<article class="reminder" [matMenuTriggerFor]="menu" [ngStyle]="{'background-color': reminder.color, 'border-left-color': reminder.color}">
+  <h2 class="reminder__text">{{ reminder.text }}</h2>
+  <p class="reminder__city">{{ reminder.city }}</p>
+  <img class="reminder__icon" [src]="weatherIcon">
+</article>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="editReminder(reminder)">{{ 'reminder-edit-action'|translate }}</button>
+  <button mat-menu-item (click)="deleteReminder(reminder.id)">{{ 'reminder-delete-action'|translate }}</button>
+</mat-menu>
+ 

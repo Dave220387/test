@@ -1,0 +1,81 @@
+<div mat-dialog-content class="calendar-app-dialog">
+  <h1 class="calendar-app-dialog__title" mat-dialog-title>{{ data.title }}</h1>
+  
+  <div class="calendar-app-dialog__content">
+    <p *ngIf="data.message" class="t-center">{{ data.message }}</p>
+    
+    <div *ngIf="data.template" [innerHTML]="data.template"></div>
+
+    <div *ngIf="data.form" class="o-forms">
+      <div class="o-forms__container-fields">
+        <div 
+          class="o-forms__field"
+          *ngFor="let field of data.form; let index = index"  
+          [ngClass]="{
+            'o-forms__field--color': field.type === 'color'
+          }">
+          <mat-form-field *ngIf="field.type !== 'checkbox' && field.type !== 'radio'" color="accent">
+            <mat-label>{{ field.label }}</mat-label>
+            
+            <input matInput *ngIf="field.type === 'text' || field.type === 'password'" type="{{ field.type }}" [(ngModel)]="data.model[field.name]" (input)="onChange()">
+            
+            <textarea no-resize [matTextareaAutosize]="true" matInput *ngIf="field.type == 'textarea'" [(ngModel)]="data.model[field.name]" (input)="onChange()"></textarea>
+
+            <mat-select *ngIf="field.type === 'select'" [(ngModel)]="data.model[field.name]" (selectionChange)="onChange()">
+              <mat-option *ngFor="let option of field.options" [value]="option.value">
+                {{ option.text }}
+              </mat-option>
+            </mat-select>
+
+            <ng-container *ngIf="field.type === 'date'">
+              <input matInput [matDatepicker]="datePickerMat" [(ngModel)]="data.model[field.name]" >
+              <mat-datepicker-toggle  matSuffix [for]="datePickerMat"></mat-datepicker-toggle>
+              <mat-datepicker #datePickerMat (dateChange)="onChange()"></mat-datepicker>
+            </ng-container>
+
+            <ng-container *ngIf="field.type === 'color'">
+              <mcc-color-picker matSuffix mccConnectedColorPicker [mccConnectedColorPickerOrigin]="triggerColor"></mcc-color-picker>
+              <input matInput matInput placeholder="#000000" mccColorPickerOrigin #triggerColor="mccColorPickerOrigin" [(ngModel)]="data.model[field.name]" (input)="onChange()" />
+            </ng-container>
+
+            <mat-error *ngIf="field.required && data.model[field.name] === ''">
+              {{ field.errorMessage }}
+            </mat-error>
+
+            <mat-error *ngIf="data.formElement.get([field.name])?.errors?.maxlength">
+              {{ ('form-field-maxlength-error'|translate) + field.maxLength }}
+            </mat-error>
+          </mat-form-field>
+
+          <ng-container *ngIf="field.type === 'radio'">
+            <mat-label class="o-forms__field__label">{{ field.label }}</mat-label>
+            <mat-radio-group [(ngModel)]="data.model[field.name]" (change)="onChange()">
+              <mat-radio-button *ngFor="let option of field.options" [value]="option.value">{{ option.text }}</mat-radio-button>
+            </mat-radio-group>
+          </ng-container>
+
+          <ng-container *ngIf="field.type === 'checkbox'">
+            <mat-checkbox [(ngModel)]="data.model[field.name]" color="accent" (change)="onChange()">{{ field.label }}</mat-checkbox>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calendar-app-dialog__actions grid-middle-center" mat-dialog-actions>
+    <ng-container *ngIf="data.actions; else actionsDialog">
+      <button class="button" mat-raised-button color="accent" *ngFor="let action of data.actions" (click)="action.callback(data.model)">
+        {{ action.placeholder }}
+      </button>
+    </ng-container>
+    
+    <ng-template #actionsDialog>
+      <button *ngIf="!data.confirm" color="accent" mat-raised-button (click)="onNoClick()">{{ 'dialog-confirm-label'|translate }}</button>
+      <ng-container *ngIf="data.confirm">
+        <button color="accent" mat-raised-button (click)="onConfirm()" [disabled]="data.formElement && !data.formElement.valid">{{ 'dialog-confirm-label'|translate }}</button>
+        <button color="secondary" mat-raised-button (click)="onNoClick()">{{ 'dialog-cancel-label'|translate }}</button>
+      </ng-container>
+    </ng-template>
+  </div>
+</div>
+ 

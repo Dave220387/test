@@ -1,0 +1,27 @@
+@import "src/styles/base/variables";
+@import "src/styles/base/typographics";
+
+.o-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  > .container {
+    position: relative;
+  }
+
+  &__brand {
+    text-align: center;
+
+    img {
+      width: 185px;
+      height: 34px;
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+ 

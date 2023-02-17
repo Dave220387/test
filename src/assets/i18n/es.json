@@ -1,0 +1,51 @@
+{
+  "lang-spanish": "Español",
+  "lang-english": "Ingles",
+
+  "month-january": "Enero",
+  "month-febraury": "Febrero",
+  "month-march": "Marzo",
+  "month-april": "Abril",
+  "month-may": "Mayo",
+  "month-june": "Junio",
+  "month-july": "Julio",
+  "month-august": "Agosto",
+  "month-september": "Septiembre",
+  "month-october": "Octubre",
+  "month-november": "Noviembre",
+  "month-december": "Diciembre",
+
+  "weekday-sunday": "Dom",
+  "weekday-monday": "Lun",
+  "weekday-tuesday": "Mar",
+  "weekday-wednesday": "Mie",
+  "weekday-thursday": "Jue",
+  "weekday-friday": "Vie",
+  "weekday-saturday": "Sab",
+
+  "reminder-modal-form-title": "Crear Recordatorio",
+  "reminder-modal-form-text-label": "Texto",
+  "reminder-modal-form-date-label": "Fecha",
+  "reminder-modal-form-color-label": "Color",
+  "reminder-modal-form-city-label": "Ciudad",
+  "reminder-create-message-success": "Tu recordatorio ha sido creado",
+  "reminder-create-message-failed": "Algo salio mal",
+
+  "reminder-modal-edit-form-title": "Editar Recordatorio",
+  "reminder-edit-message-success": "Tu recordatorio ha sido actualizado",
+  "reminder-edit-message-failed": "Algo salio mal",
+
+  "reminder-modal-delete-title": "Eliminar Recordatorio",
+  "reminder-modal-delete-message": "Estas seguro de eliminarlo?",
+  "reminder-delete-message-success": "Tu recordatorio ha sido eliminado",
+  "reminder-delete-message-failed": "Algo salio mal",
+
+  "reminder-edit-action": "Editar",
+  "reminder-delete-action": "Eliminar",
+  
+  "form-field-required-error": "Este campo es requerido",
+  "form-field-maxlength-error": "El maximo es",
+
+  "dialog-confirm-label": "Confirmar",
+  "dialog-cancel-label": "Volver"
+}

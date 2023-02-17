@@ -1,0 +1,51 @@
+{
+  "lang-spanish": "Spanish",
+  "lang-english": "English",
+  
+  "month-january": "January",
+  "month-febraury": "Febraury",
+  "month-march": "March",
+  "month-april": "April",
+  "month-may": "May",
+  "month-june": "June",
+  "month-july": "July",
+  "month-august": "August",
+  "month-september": "September",
+  "month-october": "October",
+  "month-november": "November",
+  "month-december": "December",
+  
+  "weekday-sunday": "Sun",
+  "weekday-monday": "Mon",
+  "weekday-tuesday": "Tue",
+  "weekday-wednesday": "Wed",
+  "weekday-thursday": "Thu",
+  "weekday-friday": "Frid",
+  "weekday-saturday": "Sat",
+  
+  "reminder-modal-form-title": "Create Reminder",
+  "reminder-modal-form-text-label": "Text",
+  "reminder-modal-form-date-label": "Date",
+  "reminder-modal-form-color-label": "Color",
+  "reminder-modal-form-city-label": "City",
+  "reminder-create-message-success": "Your reminder was created.",
+  "reminder-create-message-failed": "Something went wrong.",
+  
+  "reminder-modal-edit-form-title": "Edit Reminder",
+  "reminder-edit-message-success": "Your reminder was updated.",
+  "reminder-edit-message-failed": "Something went wrong.",
+  
+  "reminder-modal-delete-title": "Delete Reminder",
+  "reminder-modal-delete-message": "Are you sure?",
+  "reminder-delete-message-success": "Your reminder was deleted.",
+  "reminder-delete-message-failed": "Something went wrong.",
+
+  "reminder-edit-action": "Edit",
+  "reminder-delete-action": "Delete",
+  
+  "form-field-required-error": "This field is required",
+  "form-field-maxlength-error": "Max length is",
+  
+  "dialog-cancel-label": "Cancel",
+  "dialog-confirm-label": "Confirm"
+}

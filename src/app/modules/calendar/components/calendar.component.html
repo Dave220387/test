@@ -1,0 +1,29 @@
+<section class="p-calendar">
+  <div class="container">
+    <calendar-app-loader [show]="(isLoading$ | async)!" [overlay]="true"></calendar-app-loader>
+
+    <h1 class="p-calendar__title">{{ 'month-' + (titleCalendar|lowercase)|translate }}</h1>
+    
+    <table class="calendar">
+      <thead class="calendar__header">
+        <tr>
+          <th *ngFor="let day of daysOfWeek">
+            {{ 'weekday-' + (day|lowercase)|translate }}
+          </th>
+        </tr>
+      </thead>
+      <tbody class="calendar__days">
+        <tr *ngFor="let week of calendar">
+          <td *ngFor="let day of week.days" (click)="createReminder($event, day)" [ngClass]="{ 'currentMonth': day.currentMonth, 'hasReminders': day.remindersOfThisDay.length }">
+            <span>{{ day.date | date: 'dd' }}</span>
+
+            <div class="reminder-wrapper" *ngFor="let reminder of day.remindersOfThisDay">
+              <calendar-app-reminder [reminder]="reminder"></calendar-app-reminder>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+ 

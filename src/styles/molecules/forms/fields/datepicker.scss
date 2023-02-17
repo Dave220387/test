@@ -1,0 +1,77 @@
+.mat-datepicker-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  .mat-icon-button {
+    svg {
+      width: 20px;
+    }
+  }
+}
+ 
+.mat-calendar {
+  $calendar: &;
+
+  &-header {
+    background-color: $color-accent !important;
+
+    #{$calendar}-controls {
+      margin-bottom: 0;
+
+      #{$calendar}-period-button,
+      #{$calendar}-previous-button,
+      #{$calendar}-next-button {
+        color: $color-white;
+      }
+
+      #{$calendar}-period-button {
+        @include font-regular;
+      }
+  
+      #{$calendar}-arrow {
+        border-top-color: $color-white;
+      }
+    }
+  }
+
+  &-content {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+
+    #{$calendar}-table-header {
+      background-color: $color-accent !important;
+
+      tr {
+        &:last-child {
+          display: none;
+        }
+
+        th {
+          @include font-regular;
+          color: $color-white;
+        }
+      }
+    }
+
+    #{$calendar}-body-label {
+      @include font-regular;
+    }
+  }
+
+  .mat-calendar-body {
+    &-label {
+      @include font-regular;
+    }
+
+    &-cell-content {
+      @include font-light;
+    }
+
+    &-selected {
+      border-color: $color-accent;
+      background-color: $color-accent;
+      color: #ffffff;
+    }
+  }
+}

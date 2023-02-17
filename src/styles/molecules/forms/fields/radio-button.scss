@@ -1,0 +1,21 @@
+.mat-radio-button {
+  $radio: '';
+
+  .mat-radio {
+    &-label-content {
+      @include font-regular;
+      color: $color-text;
+      font-size: $font-paragraph-size;
+      line-height: 1.3;
+    }
+  
+    &-outer-circle {
+      border-color: $color-accent !important;
+    }
+
+    &-inner-circle {
+      background-color: $color-accent !important;
+    }
+  }
+}
+ 
